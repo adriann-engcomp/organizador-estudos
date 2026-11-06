@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organizador de Estudos</title>
+  <meta name="theme-color" content="#3b5bdb">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="lateral">
+    <div class="marca">📚 <span>Organizador<br><small>Eng. Computação · Unicamp</small></span></div>
+    <nav class="nav">
+      <a href="#/painel" data-r="painel">🏠 <span>Painel</span></a>
+      <a href="#/grade" data-r="grade">🧩 <span>Grade curricular</span></a>
+      <a href="#/semestres" data-r="semestres">📖 <span>Semestres e matérias</span></a>
+      <a href="#/objetivos" data-r="objetivos">🎯 <span>Objetivos</span></a>
+      <a href="#/config" data-r="config">⚙️ <span>Backup e config.</span></a>
+    </nav>
+  </aside>
+  <main id="main"></main>
+  <div id="flash" role="status"></div>
+
+  <script src="js/data-curriculo.js"></script>
+  <script src="js/data-catalogo.js"></script>
+  <script src="js/data-conteudo.js"></script>
+  <script src="js/expr.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Instalação como app (Android/Chrome) e uso offline — só funciona via http(s)
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
